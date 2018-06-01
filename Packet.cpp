@@ -171,6 +171,12 @@ CPacket & CPacket::operator<<(std::string arg)
 	return *this;
 }
 
+CPacket & CPacket::operator<<(Login login)
+{
+	WriteData(&login, sizeof(Login));
+	return *this;
+}
+
 
 
 CPacket & CPacket::operator >> (bool & arg)
@@ -232,7 +238,7 @@ CPacket & CPacket::operator >> (CPacket & arg)
 	return *this;
 }
 
-CPacket & CPacket::operator >> (std::string arg)
+CPacket & CPacket::operator >> (std::string& arg)
 {
 	int length = sizeof(arg);
 	ReadData(&arg, length);
@@ -240,4 +246,10 @@ CPacket & CPacket::operator >> (std::string arg)
 	return *this;
 
 
+}
+
+CPacket & CPacket::operator >> (Login & login)
+{
+	ReadData(&login, sizeof(Login));
+		return *this;
 }

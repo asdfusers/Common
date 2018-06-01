@@ -3,6 +3,7 @@
 #include <string>
 #include <Windows.h>
 #include "Protocol.h"
+
 #define PACKETBUFFERSIZE 8192
 #define PACKETHEADERSIZE 4
 
@@ -40,7 +41,7 @@ public:
 	CPacket&	operator << (LPTSTR arg);
 	CPacket&	operator << (CPacket& arg);
 	CPacket&	operator << (std::string arg);
-
+	CPacket&	operator << (Login login);
 
 
 	CPacket&	operator >> (bool& arg);
@@ -50,7 +51,8 @@ public:
 	CPacket&	operator >> (__int64& arg);
 	CPacket&	operator >> (LPTSTR arg);
 	CPacket&	operator >> (CPacket& arg);
-	CPacket&	operator >> (std::string arg);
+	CPacket&	operator >> (std::string& arg);
+	CPacket&	operator >> (Login& login);
 
 	
 protected:

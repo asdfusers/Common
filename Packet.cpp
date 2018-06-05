@@ -12,7 +12,7 @@ CPacket::CPacket(const CPacket & source) : dataField(0), readPosition(0), writeP
 	clear();
 	memcpy(packetBuffer, source.packetBuffer, PACKETBUFFERSIZE);
 	receiveSize = source.receiveSize;
-
+	socketNumber = source.socketNumber;
 	DWORD offset;
 	offset = (DWORD)source.readPosition - (DWORD)source.dataField;
 	readPosition += offset;
@@ -60,6 +60,11 @@ unsigned short CPacket::id()
 unsigned short CPacket::getDataFieldSize()
 {
 	return *packetHeader.dataSize;
+}
+
+void CPacket::SetSocketNumber(int number)
+{
+	socketNumber = number;
 }
 
 void CPacket::copyToBuffer(char * buff, int size)

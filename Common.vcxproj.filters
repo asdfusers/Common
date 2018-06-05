@@ -30,7 +30,7 @@
     <ClInclude Include="Thread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ThreadManager.h">
+    <ClInclude Include="CriticalSectionLock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,10 +41,10 @@
     <ClCompile Include="Thread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ThreadManager.cpp">
+    <ClCompile Include="CriticalSections.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CriticalSections.cpp">
+    <ClCompile Include="CriticalSectionLock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

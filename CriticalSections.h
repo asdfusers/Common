@@ -1,29 +1,20 @@
 #pragma once
-class CriticalSections
+#include "stdafx.h"
+
+namespace CS
 {
-private:
-	CRITICAL_SECTION m_CS;
-
-public:
-
-	static CriticalSections* getInstance()
+	class CriticalSection
 	{
-		if (selfIns == 0)
-			selfIns = new CriticalSections();
+	private:
+		CRITICAL_SECTION m_CS;
 
-		return selfIns;
-	}
+	public:
+		CriticalSection() { InitializeCriticalSection(&m_CS); }
+		virtual ~CriticalSection() { DeleteCriticalSection(&m_CS); }
 
-	CriticalSections() { InitializeCriticalSection(&m_CS); }
-	virtual ~CriticalSections() { DeleteCriticalSection(&m_CS); }
-	
-	void enter() { EnterCriticalSection(&m_CS); }
-	void leave() { LeaveCriticalSection(&m_CS); }
-	void releaseInstance();
+		void enter() { EnterCriticalSection(&m_CS); }
+		void leave() { LeaveCriticalSection(&m_CS); }
 
-private:
-	static CriticalSections* selfIns;
-	CriticalSections(const CriticalSections&) {}
-	const CriticalSections& operator = (const CriticalSections&) { return *this; }
-};
+	};
+}
 

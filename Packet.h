@@ -24,8 +24,10 @@ public:
 	unsigned short getDataFieldSize();
 	int getPacketSize() { return (getDataFieldSize() + PACKETHEADERSIZE); }
 	int getReceivedSize() { return receiveSize; }
+	int getSocketNumber() { return socketNumber; }
 	char* getPacketBuffer() { return packetBuffer; }
 
+	void SetSocketNumber(int number);
 	void copyToBuffer(char* buff, int size);
 	void clear();
 	void WriteData(void* buffer, int size);
@@ -63,7 +65,9 @@ protected:
 	}HEADER;
 
 	HEADER packetHeader;
+
 private:
+	int socketNumber;
 	char packetBuffer[PACKETBUFFERSIZE];
 	char* dataField;
 	char* endOfDataField;

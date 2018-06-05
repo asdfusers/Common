@@ -1,23 +1,19 @@
 #pragma once
-#ifndef THREAD_H
-#define THREAD_H
 
 #include "stdafx.h"
-
 class CThread
 {
 protected:
 	virtual void threadMain() = 0;
-	static DWORD WINAPI __threadMain(LPVOID arg);
+	static unsigned WINAPI __threadMain(void* arg);
 
 public:
 	void begin();
-	DWORD getThreadID();
+	void join();
+
+
 
 private:
 	HANDLE hThread;
-	bool isStarted;
-	DWORD threadID;
-};
-#endif
 
+};

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "Thread.h"
-#include "ThreadManager.h"
 
-DWORD CThread::__threadMain(LPVOID arg)
+
+unsigned CThread::__threadMain(void* arg)
 {
 	CThread* self = (CThread*)arg;
 	self->threadMain();
@@ -12,14 +12,11 @@ DWORD CThread::__threadMain(LPVOID arg)
 
 void CThread::begin()
 {
-	if (isStarted == true)
-		return;
-
-	hThread = CThreadManager::getInstance()->spawn(__threadMain, this, &threadID);
-	isStarted = true;
+	hThread = (HANDLE)_beginthreadex(NULL, NULL, __threadMain, (void*)this, 0, 0);
 }
 
-DWORD CThread::getThreadID()
+void CThread::join()
 {
-	return 0;
+	WaitForSingleObject(hThread, INFINITE);
+	CloseHandle(hThread);
 }

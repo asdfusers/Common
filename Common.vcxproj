@@ -131,17 +131,17 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CriticalSectionLock.h" />
     <ClInclude Include="CriticalSections.h" />
     <ClInclude Include="Packet.h" />
     <ClInclude Include="Protocol.h" />
     <ClInclude Include="Thread.h" />
-    <ClInclude Include="ThreadManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CriticalSectionLock.cpp" />
     <ClCompile Include="CriticalSections.cpp" />
     <ClCompile Include="Packet.cpp" />
     <ClCompile Include="Thread.cpp" />
-    <ClCompile Include="ThreadManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

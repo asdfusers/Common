@@ -170,8 +170,8 @@ CPacket & CPacket::operator<<(CPacket & arg)
 
 CPacket & CPacket::operator<<(std::string arg)
 {
-	int length = sizeof(arg);
-	WriteData(&arg, length);
+	int length = arg.length();
+	WriteData((LPTSTR)arg.c_str(), length);
 
 	return *this;
 }
@@ -181,6 +181,12 @@ CPacket & CPacket::operator<<(Login login)
 	WriteData(&login, sizeof(Login));
 	return *this;
 }
+
+//CPacket & CPacket::operator<<(std::list<CRoom> arg)
+//{
+//	WriteData(&arg, sizeof(std::list<CRoom>));
+//	return *this;
+//}
 
 
 
@@ -245,11 +251,10 @@ CPacket & CPacket::operator >> (CPacket & arg)
 
 CPacket & CPacket::operator >> (std::string& arg)
 {
-	int length = sizeof(arg);
-	ReadData(&arg, length);
+
+	ReadData((LPTSTR)arg.c_str(), 100 );
 
 	return *this;
-
 
 }
 
@@ -258,3 +263,9 @@ CPacket & CPacket::operator >> (Login & login)
 	ReadData(&login, sizeof(Login));
 		return *this;
 }
+//
+//CPacket & CPacket::operator >> (std::list<CRoom>& arg)
+//{
+//	ReadData(&arg, sizeof(std::list<CRoom>));
+//	return *this;
+//}

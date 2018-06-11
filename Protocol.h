@@ -12,7 +12,10 @@ enum PacketList
 	P_ENTERROOM_REQ,				    P_ENTERROOM_ACK,
 	P_BROADCAST_ENTER_ROOM_REQ,			P_BROADCAST_ENTER_ROOM_ACK,
 	P_READY_REQ,						P_READY_ACK,
-	P_READYRESULT_REQ,					P_READYRESULT_ACK				
+	P_READYRESULT_REQ,					P_READYRESULT_ACK,
+	P_GAMESTARTREADY_REQ,				P_GAMESTARTREADY_ACK,
+	P_GAMESTART_REQ,					P_GAMESTART_ACK,
+	P_GAMEINPUT_REQ,					P_GAMEINPUT_ACK
 };
 
 struct Login
@@ -50,3 +53,16 @@ static void XTrace(LPCTSTR lpszFormat, ...)
 	va_end(args);
 }
 
+typedef struct CPosition
+{
+	int x;
+	int y;
+
+	CPosition operator=(const CPosition& pos)
+	{
+		x = pos.x;
+		y = pos.y;
+
+		return *this;
+	}
+}pos;

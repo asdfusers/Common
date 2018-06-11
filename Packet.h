@@ -45,6 +45,7 @@ public:
 	CPacket&	operator << (CPacket& arg);
 	CPacket&	operator << (std::string arg);
 	CPacket&	operator << (Login login);
+	CPacket&	operator << (CPosition pos);
 	//CPacket&	operator << (std::list<CRoom> arg);
 
 	CPacket&	operator >> (bool& arg);
@@ -56,6 +57,7 @@ public:
 	CPacket&	operator >> (CPacket& arg);
 	CPacket&	operator >> (std::string& arg);
 	CPacket&	operator >> (Login& login);
+	CPacket&	operator >> (CPosition& pos);
 	//CPacket&	operator >> (std::list<CRoom>& arg);
 
 	

@@ -182,6 +182,12 @@ CPacket & CPacket::operator<<(Login login)
 	return *this;
 }
 
+CPacket & CPacket::operator<<(CPosition pos)
+{
+	WriteData(&pos, sizeof(CPosition));
+	return *this;
+}
+
 //CPacket & CPacket::operator<<(std::list<CRoom> arg)
 //{
 //	WriteData(&arg, sizeof(std::list<CRoom>));
@@ -262,6 +268,11 @@ CPacket & CPacket::operator >> (Login & login)
 {
 	ReadData(&login, sizeof(Login));
 		return *this;
+}
+CPacket & CPacket::operator >> (CPosition & pos)
+{
+	ReadData(&pos, sizeof(CPosition));
+	return *this;
 }
 //
 //CPacket & CPacket::operator >> (std::list<CRoom>& arg)

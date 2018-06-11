@@ -1,2 +1,2 @@
-﻿CriticalSections.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  Common.vcxproj -> C:\Users\GC\Documents\Visual Studio 2015\Projects\CSelectClient\Debug\Common.lib
+﻿CriticalSections.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+  Common.vcxproj -> C:\Users\danawacomputer\Documents\GitHub\CSelectServer\Debug\Common.lib

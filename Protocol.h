@@ -69,3 +69,4 @@ typedef struct CPosition
 		return *this;
 	}
 }pos;
+

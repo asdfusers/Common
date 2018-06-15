@@ -5,7 +5,7 @@
 
 #include "Protocol.h"
 
-#define PACKETBUFFERSIZE 8192
+#define PACKETBUFFERSIZE 512
 #define PACKETHEADERSIZE 4
 
 class CPacket

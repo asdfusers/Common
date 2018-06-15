@@ -131,6 +131,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CMessageQue.h" />
     <ClInclude Include="CriticalSectionLock.h" />
     <ClInclude Include="CriticalSections.h" />
     <ClInclude Include="Packet.h" />

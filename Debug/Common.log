@@ -1,2 +1,2 @@
 ﻿CriticalSections.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  Common.vcxproj -> C:\Users\GC\Documents\Visual Studio 2015\Projects\CSelectServer\Debug\Common.lib
+  Common.vcxproj -> C:\Users\GC\Documents\Visual Studio 2015\Projects\IOCP\Debug\Common.lib

@@ -10,6 +10,7 @@ enum PacketList
 	P_LOGINPACKET_REQ,					P_LOGINPACKET_ACK,
 	P_LOBBYOPTION_REQ,					P_LOBBYOPTION_ACK,
 	P_ENTERROOM_REQ,				    P_ENTERROOM_ACK,
+	P_MATCHING_REQ,						P_MATCHING_ACK,
 	P_BROADCAST_ENTER_ROOM_REQ,			P_BROADCAST_ENTER_ROOM_ACK,
 	P_BROADCAST_READY_REQ,				P_BROADCAST_READY_ACK,
 	P_READY_REQ,						P_READY_ACK,
@@ -23,8 +24,8 @@ enum PacketList
 
 struct Login
 {
-	char ID[10];
-	char password[15];
+	wchar_t ID[10];
+	wchar_t password[15];
 };
 
 enum Status
